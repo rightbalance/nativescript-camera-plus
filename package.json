@@ -2,6 +2,8 @@
   "name": "camplus-root",
   "scripts": {
     "precommit": "cd src && lint-staged",
+    "dist": "cd src && tsc -skipLibCheck --outDir ../dist",
+    "dist.clean": "rimraf dist",
     "ci.base.setup": "npm i -g typescript && echo no | npm i -g nativescript && tns usage-reporting disable && tns error-reporting disable && cd src && npm i && tsc",
     "ci.pip.install": "sudo pip install --upgrade pip && sudo pip install six",
     "ci.tslint": "cd src && npm run tslint && cd ../demo && npm run ci.tslint && cd ../demo-ng && npm run ci.tslint",
